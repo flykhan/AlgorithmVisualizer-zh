@@ -22,3 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .next
+# 原项目 CI（本地服务器部署，无需 GitHub Actions）
+.github/workflows/
