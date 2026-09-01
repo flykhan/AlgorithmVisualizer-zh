@@ -6,7 +6,6 @@
 
 > 本项目是 [TamimEhsan/AlgorithmVisualizer](https://github.com/TamimEhsan/AlgorithmVisualizer) 的中文翻译版，并新增了移动端适配。
 
-
 **原作者原版**：[https://tamimehsan.github.io/AlgorithmVisualizer/](https://tamimehsan.github.io/AlgorithmVisualizer/)
 
 ## 本中文版特性
