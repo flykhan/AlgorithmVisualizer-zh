@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Cells from "./cells";
 import Navbar from '@/components/navbar';
 import Menu from "./menu";
+import ZoomableStage from '@/components/zoomable-stage';
 
 export default function Queen() {
     const [board, setBoard] = useState(() => getBoard(4));
@@ -82,8 +83,10 @@ export default function Queen() {
                     disabled={isRunning}
                     onClear={handleClear}
                 />
-                <div className="flex flex-1 flex-col items-center justify-center overflow-auto">
-                    <Cells board={board} />
+                <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
+                    <ZoomableStage className="h-full w-full">
+                        <Cells board={board} />
+                    </ZoomableStage>
                 </div>
             </div>
         </div>

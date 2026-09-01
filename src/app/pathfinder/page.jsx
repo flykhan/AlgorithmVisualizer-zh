@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
 import Navbar from '@/components/navbar';
+import ZoomableStage from '@/components/zoomable-stage';
 import { aStar } from '@/lib/algorithms/Astar';
 import { bfsdfs } from "@/lib/algorithms/bfs";
 import { dijkstra, getNodesInShortestPathOrder } from "@/lib/algorithms/dijkstra";
@@ -163,15 +164,17 @@ export default function Pathfinder() {
                     disabled={isRunning}
                 />
                 <span style={{ margin: 2 }} />
-                <div className="flex flex-1 flex-col items-center justify-center overflow-auto">
-                    <div className="w-full h-full flex items-center justify-center" ref={gridRef}>
-                        <Grid
-                            grid={grid}
-                            onMouseDown={handleMouseDown}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseUp={handleMouseUp}
-                        />
-                    </div>
+                <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
+                    <ZoomableStage className="h-full w-full">
+                        <div className="flex h-full w-full items-center justify-center" ref={gridRef}>
+                            <Grid
+                                grid={grid}
+                                onMouseDown={handleMouseDown}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseUp={handleMouseUp}
+                            />
+                        </div>
+                    </ZoomableStage>
                 </div>
             </div>
         </div>

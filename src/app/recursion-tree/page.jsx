@@ -6,6 +6,7 @@ import { getTree, recursionActions } from '@/lib/algorithms/recursion';
 import { buchheimLayout } from '@/components/tree/layout';
 import { useTreeEditor } from '@/components/tree/use-tree-editor';
 import TreeCanvas from '@/components/tree/tree-canvas';
+import ZoomableStage from '@/components/zoomable-stage';
 import Menu from './menu';
 
 export default function RecursionTree() {
@@ -27,19 +28,23 @@ export default function RecursionTree() {
                     onStart={onStart}
                     disabled={g.isRunning}
                 />
-                <div className="relative flex-1 p-6">
-                    {g.status && (
-                        <div className="absolute top-3 left-3 z-10 rounded-md bg-slate-800 px-3 py-1.5 text-xs font-semibold text-white shadow">
-                            {g.status}
+                <div className="relative flex-1 overflow-hidden">
+                    <ZoomableStage className="h-full w-full" fitContent>
+                        {g.status && (
+                            <div className="absolute left-3 top-3 z-10 rounded-md bg-slate-800 px-3 py-1.5 text-xs font-semibold text-white shadow">
+                                {g.status}
+                            </div>
+                        )}
+                        <div className="h-full w-full p-6">
+                            <TreeCanvas
+                                tree={g.tree}
+                                layout={buchheimLayout}
+                                nodeState={g.nodeState}
+                                edgeState={g.edgeState}
+                                labels={g.labels}
+                            />
                         </div>
-                    )}
-                    <TreeCanvas
-                        tree={g.tree}
-                        layout={buchheimLayout}
-                        nodeState={g.nodeState}
-                        edgeState={g.edgeState}
-                        labels={g.labels}
-                    />
+                    </ZoomableStage>
                 </div>
             </div>
         </div>

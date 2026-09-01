@@ -8,6 +8,7 @@ import { binaryLayout } from '@/components/tree/layout';
 import { useTreeEditor } from '@/components/tree/use-tree-editor';
 import TreeCanvas from '@/components/tree/tree-canvas';
 import TreeMenu from '@/components/tree/tree-menu';
+import ZoomableStage from '@/components/zoomable-stage';
 
 const MODES = ['二叉搜索树', '红黑树'];
 const SEED = [50, 30, 70, 20, 40, 60, 80];
@@ -40,19 +41,23 @@ export default function Bst() {
                     onClear={g.clear}
                     onSpeedChange={g.setSpeed}
                 />
-                <div className="relative flex-1 p-6">
-                    {g.status && (
-                        <div className="absolute top-3 left-3 z-10 rounded-md bg-slate-800 px-3 py-1.5 text-xs font-semibold text-white shadow">
-                            {g.status}
+                <div className="relative flex-1 overflow-hidden">
+                    <ZoomableStage className="h-full w-full" fitContent>
+                        {g.status && (
+                            <div className="absolute left-3 top-3 z-10 rounded-md bg-slate-800 px-3 py-1.5 text-xs font-semibold text-white shadow">
+                                {g.status}
+                            </div>
+                        )}
+                        <div className="h-full w-full p-6">
+                            <TreeCanvas
+                                tree={g.tree}
+                                layout={binaryLayout}
+                                nodeState={g.nodeState}
+                                edgeState={g.edgeState}
+                                labels={g.labels}
+                            />
                         </div>
-                    )}
-                    <TreeCanvas
-                        tree={g.tree}
-                        layout={binaryLayout}
-                        nodeState={g.nodeState}
-                        edgeState={g.edgeState}
-                        labels={g.labels}
-                    />
+                    </ZoomableStage>
                 </div>
             </div>
         </div>

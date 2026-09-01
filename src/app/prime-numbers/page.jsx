@@ -6,6 +6,7 @@ import { seive } from "@/lib/algorithms/prime";
 import Cells from "./cells";
 import Menu from "./menu";
 import Spiral from "./spiral";
+import ZoomableStage from '@/components/zoomable-stage';
 
 export default function Seive() {
     const [number, setNumber] = useState(100);
@@ -101,13 +102,15 @@ export default function Seive() {
                     disabled={isRunning}
                     setAlgo={setAlgo}
                 />
-                <div className="flex flex-1 flex-col overflow-auto">
-                    {algo === 0 && <Cells cells={cells} />}
-                    {algo === 1 && (
-                        <div className="h-full w-full justify-center bg-gray-700">
-                            <Spiral primes={primes} maxPrime={maxPrime} />
-                        </div>
-                    )}
+                <div className="flex flex-1 flex-col overflow-hidden">
+                    <ZoomableStage className="h-full w-full">
+                        {algo === 0 && <Cells cells={cells} />}
+                        {algo === 1 && (
+                            <div className="flex h-full w-full items-center justify-center bg-gray-700">
+                                <Spiral primes={primes} maxPrime={maxPrime} />
+                            </div>
+                        )}
+                    </ZoomableStage>
                 </div>
             </div>
         </div>

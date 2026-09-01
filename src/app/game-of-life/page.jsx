@@ -3,6 +3,7 @@ import Navbar from '@/components/navbar';
 import { useRef, useState, useEffect } from 'react';
 import Menu from "./menu";
 import Grid from "./grid";
+import ZoomableStage from '@/components/zoomable-stage';
 
 const CELL = 25; // 每个格子边长（px）
 
@@ -94,18 +95,20 @@ export default function GameOfLifePage() {
                     onRandom={handleRandom}
                     isRunning={running}
                 />
-                <div className="flex flex-1 items-center justify-center overflow-auto p-2">
-                    <div
-                        className="flex h-full w-full items-center justify-center"
-                        ref={containerRef}
-                    >
-                        <Grid
-                            grid={grid}
-                            onMouseDown={handleMouseDown}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseUp={handleMouseUp}
-                        />
-                    </div>
+                <div className="flex flex-1 items-center justify-center overflow-hidden p-2">
+                    <ZoomableStage className="h-full w-full">
+                        <div
+                            className="flex h-full w-full items-center justify-center"
+                            ref={containerRef}
+                        >
+                            <Grid
+                                grid={grid}
+                                onMouseDown={handleMouseDown}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseUp={handleMouseUp}
+                            />
+                        </div>
+                    </ZoomableStage>
                 </div>
             </div>
         </div>

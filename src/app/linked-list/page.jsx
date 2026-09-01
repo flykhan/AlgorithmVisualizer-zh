@@ -14,6 +14,7 @@ import {
     reverseActions,
 } from '@/lib/algorithms/linkedList';
 import Canvas from './canvas';
+import ZoomableStage from '@/components/zoomable-stage';
 import Menu from './menu';
 
 // Slider (10..100, higher = faster) -> per-step delay in ms.
@@ -147,18 +148,20 @@ export default function LinkedList() {
                     onRandomize={handleRandomize}
                     onReset={handleReset}
                 />
-                <div className="flex flex-1 flex-col items-center justify-center overflow-auto p-6">
-                    <div className="w-full max-w-5xl">
-                        <Canvas
-                            nodes={nodes}
-                            nextOf={nextOf}
-                            prevOf={prevOf}
-                            listType={listType}
-                            nodeState={nodeState}
-                            pointers={pointers}
-                            liftedId={liftedId}
-                        />
-                    </div>
+                <div className="flex flex-1 flex-col items-center justify-center overflow-hidden p-6">
+                    <ZoomableStage className="h-full w-full">
+                        <div className="mx-auto w-full max-w-5xl">
+                            <Canvas
+                                nodes={nodes}
+                                nextOf={nextOf}
+                                prevOf={prevOf}
+                                listType={listType}
+                                nodeState={nodeState}
+                                pointers={pointers}
+                                liftedId={liftedId}
+                            />
+                        </div>
+                    </ZoomableStage>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import mergeSort from '@/lib/algorithms/mergeSort';
 import { quickSortRecursive } from "@/lib/algorithms/quickSortRecursive";
 import Menu from "./menu";
 import Rects from "./rects";
+import ZoomableStage from '@/components/zoomable-stage';
 
 export default function RecursiveSort() {
     const [count, setCount] = useState(20);
@@ -200,8 +201,10 @@ export default function RecursiveSort() {
                     onAlgoChanged={setAlgo}
                     onSpeedChange={handleSpeedChanged}
                 />
-                <div className="flex flex-1 flex-col items-center justify-center overflow-auto">
-                    <Rects rects={rects} />
+                <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
+                    <ZoomableStage className="h-full w-full">
+                        <Rects rects={rects} />
+                    </ZoomableStage>
                 </div>
             </div>
         </div>

@@ -5,6 +5,7 @@ import { bubbleSort, insertionSort, selectionSort } from "@/lib/algorithms/sorti
 import Rects from "./rects";
 import Navbar from '@/components/navbar';
 import Menu from "./menu";
+import ZoomableStage from '@/components/zoomable-stage';
 
 export default function Sort() {
     const [count, setCount] = useState(20);
@@ -141,10 +142,12 @@ export default function Sort() {
                     onAlgoChanged2={setAlgo2}
                     onSpeedChange={handleSpeedChanged}
                 />
-                <div className="flex flex-1 flex-col items-center justify-center overflow-auto">
-                    <Rects speed={speed} rects={rects} />
-                    {doubles && <hr style={{ width: "90%" }} />}
-                    {doubles && <Rects rects={rects2} />}
+                <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
+                    <ZoomableStage className="h-full w-full">
+                        <Rects speed={speed} rects={rects} />
+                        {doubles && <hr style={{ width: "90%" }} />}
+                        {doubles && <Rects rects={rects2} />}
+                    </ZoomableStage>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Navbar from '@/components/navbar';
 import Canvas from "./canvas";
 import Menu from "./menu";
+import ZoomableStage from '@/components/zoomable-stage';
 
 export default function ConvexHull() {
     const [width, setWidth] = useState(600);
@@ -63,17 +64,19 @@ export default function ConvexHull() {
                     onChangeValues={handleValueIncrease}
                     disabled={isRunning}
                 />
-                <div className="flex flex-1 flex-col items-center justify-center overflow-auto">
-                    <div className="w-full h-full flex items-center justify-center" ref={containerRef}>
-                        <Canvas
-                            width={width}
-                            height={height}
-                            dots={dots}
-                            onTurnOff={handleTurnOff}
-                            onGoing={isRunning}
-                            speed={speed}
-                        />
-                    </div>
+                <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
+                    <ZoomableStage className="h-full w-full">
+                        <div className="flex h-full w-full items-center justify-center" ref={containerRef}>
+                            <Canvas
+                                width={width}
+                                height={height}
+                                dots={dots}
+                                onTurnOff={handleTurnOff}
+                                onGoing={isRunning}
+                                speed={speed}
+                            />
+                        </div>
+                    </ZoomableStage>
                 </div>
             </div>
         </div>
