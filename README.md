@@ -1,124 +1,79 @@
-
 ![banner](Assets/banner.png)
-# Algorithm Visualizer
 
-A better visualization of different algorithms made with React. 
+# 算法可视化（Algorithm Visualizer 中文版）
 
-Visit : https://tamimehsan.github.io/AlgorithmVisualizer/
+用 React 构建的算法可视化工具，通过逐步动画直观展示 30+ 种算法的执行过程，让学习更简单、更直观。
 
-![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=TamimEhsan.AlgorithmVisualizer)
-
-Explore more than 30 algorithms with step by step visualization simplifying the learning process and making it more engaging for a better understanding. 
-
-So far there are these segments  
-- Pathfinder
-- Graph Traversal (BFS / DFS)
-- Shortest Path
-- Minimum Spanning Tree
-- Connectivity
-- Network Flow
-- Prime Numbers
-- Sorting Algorithms
-- N Queen
-- Convex Hull
-- Binary Search Game
-- Binary Search Tree
-- Recursion Tree
-- Turing Machine
-- Game of Life
-- Linked List
-
-I have implemented a total of `30+ algorithms` so far. And will try to add more later.  
-
-## Algorithms implemented 
-
-- Graph Search
-  - DFS
-  - BFS
-  - Dijkstra
-  - A star
-  - Recursive Maze Creation
-- Data Structures
-  - Linked List (insert, delete, search, reverse — singly & doubly)
-- Trees
-  - Binary Search Tree (insert, delete, search with animated re-layout)
-- Graph Traversal
-  - BFS
-  - DFS
-- Single Source Shortest Path
-  - Dijkstra
-  - Bellman-Ford
-- Minimum Spanning Tree 
-  - Kruskal
-  - Prim
-- Connectivity
-  - Connected Components
-  - Strongly Connected Components (Tarjan)
-  - Weakly Connected Components
-- Network Flow
-  - Edmonds-Karp
-  - Ford-Fulkerson
-  - Min Cut
-- Sorting
-  - Bubble sort
-  - Selection sort
-  - Insertion sort
-  - Heap sort
-  - Merge sort
-  - Quick sort
-- Prime Numbers
-  - Sieve or Eratosthenes
-  - Archimedes Spiral
-- N Queen Backtracking
-- Graham Scan for Convex Hull
-- Binary Search
-- Recursion
-  - Fibonacci Number
-  - Binomial Coefficient
-  - Derangement
-  - Fast Exponentiation
-  - Stirling Number of Second Kind
-- Turing Machine
-  - Bitwise NOT
-  - Increment one
-  - 2's Compliment
+> 本项目是 [TamimEhsan/AlgorithmVisualizer](https://github.com/TamimEhsan/AlgorithmVisualizer) 的中文翻译版，并新增了移动端适配。
 
 
+**原作者原版**：[https://tamimehsan.github.io/AlgorithmVisualizer/](https://tamimehsan.github.io/AlgorithmVisualizer/)
 
-### Contribution
-I am not sure if anyone would like to contribute to this project or not. But any kind of contributions are welcomes. Also if you like this please star this repo. It keeps me motivated.
+## 本中文版特性
 
-### Special Features addition timeline
+- 🌏 **全站界面中文化**：导航、菜单、按钮、描述、提示全部翻译为中文，算法专有名词（BFS / DFS / Dijkstra / Kruskal / Prim 等）保留标准英文术语
+- 📱 **移动端适配**：窄屏下操作区自动移到底部、显示区占中上部，导航栏矮化；宽屏保持「菜单在左、显示在右」布局
+- 🐛 **修复了原项目若干 bug**：
+  - 生命游戏：相邻活细胞之间分隔线消失（黑描边盖住白线）
+  - 生命游戏：网格溢出屏幕、无法自适应容器尺寸
+  - 凸包：点全部挤在画布左上角（初始化时序问题）
 
-- Commit 16: Added Flip Move animation to inplace sorting components
-- Commit 20: Added Tree Structure
-- 13 Dec 2024: Release v2.0.0: Migrate the project from legacy project to next js with shadcn ui [#3](https://github.com/TamimEhsan/AlgorithmVisualizer/pull/3)
-- Jun 2026: Added Linked List visualizer (singly & doubly) with staged insert/delete animations
-- Jun 2026: Added interactive Graph Traversal (BFS / DFS) built on React Flow
-- Jun 2026: Added Shortest Path (Dijkstra / Bellman-Ford) and Minimum Spanning Tree (Kruskal / Prim) on a shared, reusable graph workspace
-- Jun 2026: Added Connectivity (components / SCC / WCC) and Network Flow (Edmonds-Karp / Ford-Fulkerson, max flow / min cut)
-- Jun 2026: Added a reusable SVG tree component with a Binary Search Tree visualizer, and migrated the Recursion Tree onto it
+## 已实现的算法（30+）
 
-### Acknowledgement
+- **图搜索**：DFS、BFS、Dijkstra、A*、递归迷宫生成
+- **数据结构**：链表（插入、删除、搜索、翻转 —— 单链表与双向链表）
+- **树**：二叉搜索树（插入、删除、搜索，带动画重排）
+- **图的遍历**：BFS、DFS
+- **单源最短路径**：Dijkstra、Bellman-Ford
+- **最小生成树**：Kruskal、Prim
+- **连通性**：连通分量、强连通分量（Tarjan）、弱连通分量
+- **网络流**：Edmonds-Karp、Ford-Fulkerson、最小割
+- **排序**：冒泡排序、选择排序、插入排序、堆排序、归并排序、快速排序
+- **素数**：埃拉托斯特尼筛法、阿基米德螺旋
+- **N 皇后回溯**
+- **凸包**：Graham 扫描
+- **二分查找**
+- **递归**：斐波那契、二项式系数、错排、快速幂、第二类斯特林数
+- **图灵机**：按位取反、加一、二进制补码
 
-I took inspirations from the following sources for some of the segments.
-- `Pathfinder`: [The Projects That Got Me Into Google](https://youtu.be/n4t_-NjY_Sg)
-- `Archimedes Spiral for Primes`: [Why do prime numbers make these spirals? ](https://youtu.be/EK32jo7i5LQ)
-- `Recursion tree visualizer`: [Recursion Tree Visualizer](https://github.com/brpapa/recursion-tree-visualizer)
-- `Turing Machine`: [Tursi](https://github.com/schaetzc/tursi)
+## 本地运行
 
-### Run locally
+确保已安装 Node.js，然后执行：
 
-Make sure you have node installed in your system. Then run
 ```bash
 npm i
 npm run dev
 ```
-This will start the app in `http://localhost:3000/AlgorithmVisualizer`
 
-### Inspiration for next sections
+应用将运行在 `http://localhost:3000`。
 
-- [University of San Francisco Site](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html) 
-- ​[algorithm-visualizer](https://github.com/algorithm-visualizer)
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+构建产物输出到 `./build`（静态导出）。
+
+## 技术栈
+
+Next.js · React · Tailwind CSS · Radix UI · Lucide Icons · React Flow
+
+## 致谢
+
+本项目部分算法的灵感来源于以下资源，在此向原作者致谢：
+
+- `Pathfinder`：[The Projects That Got Me Into Google](https://youtu.be/n4t_-NjY_Sg)
+- `素数螺旋`：[Why do prime numbers make these spirals?](https://youtu.be/EK32jo7i5LQ)
+- `递归树可视化`：[Recursion Tree Visualizer](https://github.com/brpapa/recursion-tree-visualizer)
+- `图灵机`：[Tursi](https://github.com/schaetzc/tursi)
+
+## 灵感来源（后续扩展方向）
+
+- [University of San Francisco Site](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+- [algorithm-visualizer](https://github.com/algorithm-visualizer)
 - [National University of Singapore Site](https://visualgo.net/en)
 
+## License
+
+继承原项目许可（MIT）。详情见 [LICENSE](LICENSE)。
