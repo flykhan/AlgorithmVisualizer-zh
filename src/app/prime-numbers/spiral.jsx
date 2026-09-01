@@ -1,27 +1,22 @@
 export default function Spiral({ primes, maxPrime }) {
-    let Maxwidth = window.innerWidth;
-    let MaxHeight = window.innerHeight;
-
-    let width, height;
-    if (Maxwidth > MaxHeight) {
-        let ratio = Maxwidth / MaxHeight;
-        height = maxPrime;
-        width = ratio * height;
-    } else {
-        let ratio = MaxHeight / Maxwidth;
-        width = maxPrime;
-        height = ratio * width;
-    }
-
-    let radius = Math.min(width, height) / 300;
+    // 螺旋坐标范围由最大素数决定（cell 最大到 maxPrime）
+    // 内容中心在 (maxPrime, maxPrime)，半径约 maxPrime，故画布取 2*maxPrime 见方
+    const size = Math.max(maxPrime, 1) * 2;
+    const cx = size / 2;
+    const cy = size / 2;
+    const radius = Math.max(size / 300, 1);
 
     return (
-        <svg viewBox={"0 0 " + 2 * width + " " + 2 * height} xmlns="http://www.w3.org/2000/svg">
+        <svg
+            viewBox={`0 0 ${size} ${size}`}
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ width: "min(80vw, 60vh)", height: "min(80vw, 60vh)" }}
+        >
             {primes.map((cell, cellidx) => (
                 <circle
                     key={cellidx}
-                    cx={cell * Math.cos(cell) + width}
-                    cy={cell * Math.sin(cell) + height}
+                    cx={cell * Math.cos(cell) + cx}
+                    cy={cell * Math.sin(cell) + cy}
                     r={radius}
                     stroke="black"
                     strokeWidth="0.5"

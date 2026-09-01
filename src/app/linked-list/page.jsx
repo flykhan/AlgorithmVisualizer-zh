@@ -149,18 +149,16 @@ export default function LinkedList() {
                     onReset={handleReset}
                 />
                 <div className="flex flex-1 flex-col items-center justify-center overflow-hidden p-6">
-                    <ZoomableStage className="h-full w-full">
-                        <div className="mx-auto w-full max-w-5xl">
-                            <Canvas
-                                nodes={nodes}
-                                nextOf={nextOf}
-                                prevOf={prevOf}
-                                listType={listType}
-                                nodeState={nodeState}
-                                pointers={pointers}
-                                liftedId={liftedId}
-                            />
-                        </div>
+                    <ZoomableStage className="h-full w-full" fitContent>
+                        <Canvas
+                            nodes={nodes}
+                            nextOf={nextOf}
+                            prevOf={prevOf}
+                            listType={listType}
+                            nodeState={nodeState}
+                            pointers={pointers}
+                            liftedId={liftedId}
+                        />
                     </ZoomableStage>
                 </div>
             </div>

@@ -6,6 +6,20 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* 动态视口高度：由 layout.js 里的脚本写入 --app-height，精确反映真实可见高度 */
+:root {
+  --app-height: 100vh;
+}
+
+/* 覆盖 h-screen / h-dvh，统一用动态视口高度（--app-height 兜底 100vh） */
+.h-screen {
+  height: var(--app-height);
+}
+
+.h-dvh {
+  height: var(--app-height);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

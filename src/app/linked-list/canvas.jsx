@@ -24,7 +24,7 @@ export default function Canvas({ nodes, nextOf, prevOf, listType, nodeState = {}
     const tail = nodes[count - 1];
 
     return (
-        <svg viewBox={`0 0 ${VB_W} ${VB_H}`} xmlns="http://www.w3.org/2000/svg" className="w-full">
+        <svg viewBox={`0 0 ${VB_W} ${VB_H}`} xmlns="http://www.w3.org/2000/svg" style={{ width: 640, height: 640 * VB_H / VB_W }}>
             <defs>
                 <filter id="nodeShadow" x="-20%" y="-20%" width="140%" height="140%">
                     <feDropShadow dx="0.3" dy="0.4" stdDeviation="0.5" floodOpacity="0.25" />

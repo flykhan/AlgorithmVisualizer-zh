@@ -143,12 +143,10 @@ export default function Sort() {
                     onSpeedChange={handleSpeedChanged}
                 />
                 <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
-                    <ZoomableStage className="h-full w-full">
-                        <div className="flex h-full w-full flex-col items-center justify-center">
-                            <Rects speed={speed} rects={rects} />
-                            {doubles && <hr style={{ width: "90%" }} />}
-                            {doubles && <Rects rects={rects2} />}
-                        </div>
+                    <ZoomableStage className="h-full w-full" fitContent>
+                        <Rects speed={speed} rects={rects} />
+                        {doubles && <hr style={{ width: "90%" }} />}
+                        {doubles && <Rects rects={rects2} />}
                     </ZoomableStage>
                 </div>
             </div>

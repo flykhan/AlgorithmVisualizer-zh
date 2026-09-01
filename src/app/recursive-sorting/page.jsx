@@ -202,7 +202,7 @@ export default function RecursiveSort() {
                     onSpeedChange={handleSpeedChanged}
                 />
                 <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
-                    <ZoomableStage className="h-full w-full">
+                    <ZoomableStage className="h-full w-full" fitContent>
                         <Rects rects={rects} />
                     </ZoomableStage>
                 </div>

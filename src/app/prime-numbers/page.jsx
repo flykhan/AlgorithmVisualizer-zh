@@ -23,6 +23,16 @@ export default function Seive() {
     useEffect(() => { speedRef.current = speed; }, [speed]);
     useEffect(() => { numberRef.current = number; }, [number]);
 
+    // 切到螺旋模式时，若还没有数据则自动生成，避免空白
+    useEffect(() => {
+        if (algo === 1 && primes.length === 0) {
+            const p = seive(numberRef.current * 100);
+            setPrimes(p);
+            setMaxPrime(p.length ? p[p.length - 1] : 0);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [algo]);
+
     const changeSpeed = (val) => {
         setSpeed(600 - val * 10);
     };
@@ -103,10 +113,10 @@ export default function Seive() {
                     setAlgo={setAlgo}
                 />
                 <div className="flex flex-1 flex-col overflow-hidden">
-                    <ZoomableStage className="h-full w-full">
+                    <ZoomableStage className="h-full w-full" fitContent>
                         {algo === 0 && <Cells cells={cells} />}
                         {algo === 1 && (
-                            <div className="flex h-full w-full items-center justify-center bg-gray-700">
+                            <div className="flex items-center justify-center bg-gray-700">
                                 <Spiral primes={primes} maxPrime={maxPrime} />
                             </div>
                         )}

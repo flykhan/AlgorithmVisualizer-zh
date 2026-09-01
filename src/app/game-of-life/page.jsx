@@ -97,10 +97,7 @@ export default function GameOfLifePage() {
                 />
                 <div className="flex flex-1 items-center justify-center overflow-hidden p-2">
                     <ZoomableStage className="h-full w-full">
-                        <div
-                            className="flex h-full w-full items-center justify-center"
-                            ref={containerRef}
-                        >
+                        <div className="flex h-full w-full items-center justify-center" ref={containerRef}>
                             <Grid
                                 grid={grid}
                                 onMouseDown={handleMouseDown}

@@ -27,7 +27,7 @@ export default function BinaryHeap() {
                     onSpeedChange={g.setSpeed}
                 />
                 <div className="relative flex-1 overflow-hidden">
-                    <ZoomableStage className="h-full w-full" fitContent>
+                    <ZoomableStage className="h-full w-full">
                         {g.status && (
                             <div className="absolute left-3 top-3 z-10 rounded-md bg-slate-800 px-3 py-1.5 text-xs font-semibold text-white shadow">
                                 {g.status}

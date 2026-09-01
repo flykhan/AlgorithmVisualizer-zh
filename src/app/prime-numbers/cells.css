@@ -1,3 +1,5 @@
 .Cells{
     font-size: 0px;
+    display: inline-grid;
+    grid-template-columns: repeat(10, 50px);
 }
