@@ -61,18 +61,20 @@ export default function GameOfLifePage() {
     const handleClearBoard = () => {
         setRunning(false);
         runningRef.current = false;
-        setGrid((prev) => buildGrid(prev.length || 20, prev[0]?.length || 24));
+        const row = grid.length || 20;
+        const col = (grid[0] && grid[0].length) || 24;
+        setGrid(buildGrid(row, col));
     };
 
     // 随机填充
     const handleRandom = () => {
         setRunning(false);
         runningRef.current = false;
-        setGrid((prev) => {
-            const g = buildGrid(prev.length || 20, prev[0]?.length || 24);
-            randomizeGrid(g, 0.22);
-            return g;
-        });
+        const row = grid.length || 20;
+        const col = (grid[0] && grid[0].length) || 24;
+        const g = buildGrid(row, col);
+        randomizeGrid(g, 0.22);
+        setGrid(g);
     };
 
     const gameOfLife = async (startGrid) => {
@@ -99,6 +101,7 @@ export default function GameOfLifePage() {
                     <ZoomableStage className="h-full w-full">
                         <div className="flex h-full w-full items-center justify-center" ref={containerRef}>
                             <Grid
+                                key={grid.length + '-' + (grid[0]?.length || 0)}
                                 grid={grid}
                                 onMouseDown={handleMouseDown}
                                 onMouseEnter={handleMouseEnter}
