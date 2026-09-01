@@ -20,7 +20,7 @@ export default function Navbar() {
           </Link>
         </Button>
         <Button size="icon" variant="ghost" asChild className="h-8 w-8">
-          <Link href="https://github.com/TamimEhsan/AlgorithmVisualizer" target="_blank">
+          <Link href="https://github.com/flykhan/AlgorithmVisualizer-zh" target="_blank">
             <Github className="h-4 w-4" />
           </Link>
         </Button>
