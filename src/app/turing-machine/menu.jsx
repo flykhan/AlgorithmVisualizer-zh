@@ -4,7 +4,7 @@ import { Play, RotateCcw } from 'lucide-react';
 
 export default function Menu({ visualize, onAlgoChanged, onReset, setInput1, setInput2, disabled }) {
     return (
-        <div className="w-64 min-w-full md:w-64 bg-gray-100 p-4 space-y-6 overflow-auto max-h-[46vh] md:max-h-none">
+        <div className="menu-panel w-64 min-w-full md:w-64 bg-gray-100 p-4 space-y-6 overflow-auto max-h-[46dvh] md:max-h-none">
             <h2 className="text-lg font-semibold">图灵机</h2>
 
             <div className="space-y-3">

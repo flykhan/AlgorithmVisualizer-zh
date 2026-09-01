@@ -14,7 +14,7 @@ export default function BinaryHeap() {
     const g = useTreeEditor({ initialTree });
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen h-dvh">
             <Navbar />
             <div className="flex flex-col-reverse md:flex-row flex-1 overflow-hidden">
                 <HeapMenu

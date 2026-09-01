@@ -76,6 +76,9 @@ body {
   .menu-panel {
     padding: 0.6rem !important;
     max-height: 42vh !important;
+    max-height: 42dvh !important;
+    /* 底部留出安全区，避免最后一行被 Home 条遮挡 */
+    padding-bottom: calc(0.6rem + env(safe-area-inset-bottom)) !important;
   }
   .menu-panel > * + * {
     margin-top: 0.5rem !important;

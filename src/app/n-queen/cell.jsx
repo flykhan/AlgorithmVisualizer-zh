@@ -18,9 +18,8 @@ export default function Cell({ cell }) {
             {cell.isPresent && (
                 <img
                     src="/images/queen-cell.png"
-                    alt="Queen"
-                    height="100px"
-                    style={{ padding: "25px" }}
+                    alt="皇后"
+                    style={{ width: "80%", height: "80%", objectFit: "contain" }}
                 />
             )}
         </div>

@@ -129,7 +129,7 @@ export default function Sort() {
     };
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen h-dvh">
             <Navbar />
             <div className="flex flex-col-reverse md:flex-row flex-1 overflow-hidden">
                 <Menu
@@ -144,9 +144,11 @@ export default function Sort() {
                 />
                 <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
                     <ZoomableStage className="h-full w-full">
-                        <Rects speed={speed} rects={rects} />
-                        {doubles && <hr style={{ width: "90%" }} />}
-                        {doubles && <Rects rects={rects2} />}
+                        <div className="flex h-full w-full flex-col items-center justify-center">
+                            <Rects speed={speed} rects={rects} />
+                            {doubles && <hr style={{ width: "90%" }} />}
+                            {doubles && <Rects rects={rects2} />}
+                        </div>
                     </ZoomableStage>
                 </div>
             </div>

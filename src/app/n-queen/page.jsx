@@ -73,7 +73,7 @@ export default function Queen() {
     };
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen h-dvh">
             <Navbar />
             <div className="flex flex-col-reverse md:flex-row flex-1 overflow-hidden">
                 <Menu
@@ -84,7 +84,7 @@ export default function Queen() {
                     onClear={handleClear}
                 />
                 <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
-                    <ZoomableStage className="h-full w-full">
+                    <ZoomableStage className="h-full w-full" fitContent>
                         <Cells board={board} />
                     </ZoomableStage>
                 </div>

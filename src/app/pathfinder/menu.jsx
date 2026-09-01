@@ -4,7 +4,7 @@ import { Play, Grid3X3, Eraser, Trash2 } from 'lucide-react';
 
 export default function Menu({ onAlgoChanged, onVisualize, algorithms, mazes, onMazeChanged, onCreateMaze, onClearBoard, onClearPath, disabled }) {
     return (
-        <div className="menu-panel w-full md:w-64 bg-gray-100 p-4 space-y-6 overflow-auto max-h-[46vh] md:max-h-none">
+        <div className="menu-panel w-full md:w-64 bg-gray-100 p-4 space-y-6 overflow-auto max-h-[46dvh] md:max-h-none">
             <h2 className="text-lg font-semibold">路径查找</h2>
 
             <CustomSelect

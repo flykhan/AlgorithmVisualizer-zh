@@ -85,7 +85,7 @@ export default function GameOfLifePage() {
     };
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen h-dvh">
             <Navbar title="生命游戏" />
             <div className="flex flex-col-reverse md:flex-row flex-1 overflow-hidden">
                 <Menu

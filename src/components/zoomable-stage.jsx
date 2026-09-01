@@ -103,7 +103,7 @@ export default function ZoomableStage({
             onTouchEnd={onTouchEnd}
         >
             <div
-                className="h-full w-full"
+                className="flex h-full w-full items-center justify-center"
                 ref={contentRef}
                 style={{
                     transform: `scale(${scale})`,

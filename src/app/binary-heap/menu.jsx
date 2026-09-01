@@ -15,7 +15,7 @@ export default function HeapMenu({ disabled, onInsert, onExtract, onBuild, onHea
     const parsedList = () => list.split(/[\s,]+/).map(Number).filter((n) => Number.isFinite(n));
 
     return (
-        <div className="menu-panel w-full md:w-64 bg-gray-100 p-4 space-y-6 overflow-auto max-h-[46vh] md:max-h-none">
+        <div className="menu-panel w-full md:w-64 bg-gray-100 p-4 space-y-6 overflow-auto max-h-[46dvh] md:max-h-none">
             <h2 className="text-lg font-semibold">二叉堆（最小堆）</h2>
 
             <div className="space-y-3">

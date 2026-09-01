@@ -5,7 +5,7 @@ import { Play, Shuffle } from 'lucide-react';
 
 export default function Menu({ disabled, onViusalize, onRandomize, onCountChange, onAlgoChanged, onSpeedChange }) {
     return (
-        <div className="menu-panel w-full md:w-64 bg-gray-100 p-4 space-y-6 overflow-auto max-h-[46vh] md:max-h-none">
+        <div className="menu-panel w-full md:w-64 bg-gray-100 p-4 space-y-6 overflow-auto max-h-[46dvh] md:max-h-none">
             <h2 className="text-lg font-semibold">递归排序</h2>
 
             <div className="space-y-3">
