@@ -54,6 +54,19 @@ npm run build
 
 构建产物输出到 `./build`（静态导出）。
 
+
+## Docker 部署
+
+整站以 Docker 镜像方式部署（多阶段构建：Node 构建 Next.js 静态导出 → nginx 提供静态文件），线上运行于
+https://algoviz.example.com 。镜像地址：`flykhan/algoviz`。
+
+```bash
+docker build -t flykhan/algoviz:latest .
+docker run -d --name algoviz -p 19090:80 --restart unless-stopped flykhan/algoviz:latest
+```
+
+详细说明见 [deploy/README.md](deploy/README.md)。
+
 ## 技术栈
 
 Next.js · React · Tailwind CSS · Radix UI · Lucide Icons · React Flow
